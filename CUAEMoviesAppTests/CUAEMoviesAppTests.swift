@@ -2,7 +2,7 @@
 //  CUAEMoviesAppTests.swift
 //  CUAEMoviesAppTests
 //
-//  Created by tr on 7/11/18.
+//  Created by Manar Magdy on 7/11/18.
 //  Copyright © 2018 tr. All rights reserved.
 //
 

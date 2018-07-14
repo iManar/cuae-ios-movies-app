@@ -22,18 +22,27 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="old-e1-ffS">
-                                <rect key="frame" x="85.5" y="627" width="204.5" height="20"/>
+                                <rect key="frame" x="86" y="626" width="204.5" height="21"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Created by ">
+                                    <fragment content="Created by">
                                         <attributes>
                                             <color key="NSColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <font key="NSFont" size="16" name="CenturyGothic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <font key="NSFont" size="16" name="ArialHebrew"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="Manar Magdy">
                                         <attributes>
                                             <color key="NSColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <font key="NSFont" size="16" name="CenturyGothic-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>

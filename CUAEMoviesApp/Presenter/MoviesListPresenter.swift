@@ -39,8 +39,9 @@ class MoviesListPresenter: MoviesListProtocol {
     private let serviceManager = SearchManager()
     
     
-    // MARK: - Internal Properties
-    var moviesList: [Movie]?
+    // MARK: - Private Lazy Variables
+    lazy var moviesList: [Movie] = []
+    var searchResult: SearchResult!
     
     
     
@@ -66,7 +67,9 @@ class MoviesListPresenter: MoviesListProtocol {
             guard let strongSelf = self else { return }
            
             if let responseModel = response {
-               strongSelf.moviesList = responseModel.movies
+                strongSelf.searchResult = responseModel
+                strongSelf.moviesList.append(contentsOf: responseModel.movies ?? [])
+                strongSelf.delegate.refreshView()
             } else {
 //                showAlertView(error!.localizedDescription, title: General.errorViewTitle)
             }

@@ -12,7 +12,7 @@ import Foundation
 /**
  *  TableShowMode enum for specifing the current status for the table content
  */
-@objc public enum TableShowMode {
+@objc public enum TableShowMode: Int {
     case normal
     case error
     case loading

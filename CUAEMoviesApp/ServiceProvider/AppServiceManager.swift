@@ -9,7 +9,7 @@
 import SVProgressHUD
 import Alamofire
 
-class TulipServiceManager {
+class AppServiceManager {
     
     class func doRequest(path: MoviesDBUrls.Path,
                          method: HTTPMethod,

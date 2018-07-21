@@ -25,7 +25,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <searchBar contentMode="redraw" placeholder="Search..." translatesAutoresizingMaskIntoConstraints="NO" id="03P-FN-UXo" customClass="CareemSearchBar" customModule="CareemMovie" customModuleProvider="target">
+                                        <searchBar contentMode="redraw" placeholder="Search..." translatesAutoresizingMaskIntoConstraints="NO" id="03P-FN-UXo" customClass="CareemSearchBar" customModule="CUAEMoviesApp" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="ha8-2o-sba"/>
@@ -77,13 +77,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EgW-q0-aiB"/>
                     </view>
-                    <connections>
-                        <outlet property="careemSearchBar" destination="03P-FN-UXo" id="xdm-JN-vvj"/>
-                        <outlet property="containerView" destination="41P-BQ-HAM" id="fX5-lq-e4B"/>
-                        <outlet property="resultsLabel" destination="BLs-JR-KgZ" id="ofg-AC-4UZ"/>
-                        <outlet property="tableHeaderView" destination="XfU-Md-V9Q" id="Q3f-dz-5Fy"/>
-                        <outlet property="tableView" destination="VVT-KW-Ur4" id="Tya-fg-CGI"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="apm-wk-6mb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,7 +85,7 @@
         <!--Search Suggestions View Controller-->
         <scene sceneID="L1t-zF-Zr8">
             <objects>
-                <viewController storyboardIdentifier="SearchSuggestionsViewController" id="MSm-4R-Bvx" customClass="SearchSuggestionsViewController" customModule="CareemMovie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchSuggestionsViewController" id="MSm-4R-Bvx" customClass="SearchSuggestionsViewController" customModule="CUAEMoviesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mbm-u4-g1S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,9 +132,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KK8-2h-ewC"/>
                     </view>
-                    <connections>
-                        <outlet property="tableView" destination="dDY-Cp-ZMy" id="3AP-NG-3Zx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyH-I8-3km" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

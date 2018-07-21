@@ -23,7 +23,6 @@ enum MoviesDBUrls {
     
     
     enum Path {
-        
         case search(apiKey: String, query: String, page: Int)
         
         var absolutePath: String {

@@ -21,15 +21,12 @@ All methods, properties, and types available in the Movies Box app are documente
 
 ## Screen Shots
 
-<p align="left">
-<img width="300" height="500" src="/Images/splash.png"/>
+<p float="center">
+<img width="320" height="530" src="/Images/splash.png"/>
+<img width="320" height="530" src="/Images/home.jpg"/>
 </p>
-<p align="left"> Launch Screen </p>
+<br/><br/><br/><br/><br/>
 
-<p align="right">
-<img width="300" height="500" src="cuae-ios-movies-app/Images/home.jpg"/>
-</p>
-<p align="center"> Movie List Result </p>
 
 ## Installation
 

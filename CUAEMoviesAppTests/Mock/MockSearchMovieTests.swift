@@ -7,6 +7,11 @@
 //
 
 
+import Foundation
+import XCTest
+
+@testable import CUAEMoviesApp
+
 /* TEST CASES:
  1. Mock test search success
  2. Mock test search with error

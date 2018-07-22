@@ -50,6 +50,5 @@ extension SearchSuggestionsViewController: UITableViewDataSource, UITableViewDel
         if let moviesListViewController = parent as? MoviesListViewController {
             moviesListViewController.selectedSuggestion = suggestionsList[indexPath.row]
         }
-
     }
 }

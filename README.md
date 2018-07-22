@@ -47,7 +47,7 @@ You just need to run the following command:
 ```
 $ pod install
 ```
-P.S. : There's no need to do it, they are already uploaded ;) 
+> **P.S.** There's no need to do it, they are already uploaded 💥 
 ## Architecture
 The current architecture of the app is MVP (Model View Presenter).
 

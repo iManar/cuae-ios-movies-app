@@ -6,7 +6,6 @@ target 'CUAEMoviesApp' do
   use_frameworks!
 
   # Pods for CUAEMoviesApp
-#  pod 'RealmSwift'
   pod 'Alamofire'
   pod 'SDWebImage'
   pod 'ObjectMapper'

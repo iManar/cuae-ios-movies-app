@@ -20,6 +20,17 @@ All methods, properties, and types available in the Movies Box app are documente
 * [Dependencies](#dependencies)
 
 ## Screen Shots
+
+<p align="left">
+<img width="320" height="536" src="Images/splash.PNG"/>
+</p>
+<p align="left"> Launch Screen </p>
+
+<p align="right">
+<img width="320" height="536" src="Images/jpg"/>
+</p>
+<p align="right"> Movie List Result </p>
+
 ## Installation
 
 ### CocoaPods
@@ -51,22 +62,19 @@ The most important components are as follow:
 
 ### Code Snippets
 ```swift
-class func doRequest(path: MoviesDBUrls.Path,
-method: HTTPMethod,
-params: [String: Any]? = nil,
-success: @escaping (_ result: Any) -> Void,
-failure: @escaping (_ err: Error) -> Void)
+class func doRequest(path: MoviesDBUrls.Path, method: HTTPMethod, params: [String: Any]? = nil, success: @escaping (_ result: Any) -> Void, failure: @escaping (_ err: Error) -> Void)
 ```
 This class method provides a way to do any http request
 - Parameter path: Enum of predefined set of paths
 - Parameter method: Enum of predeefined set of types for the http method
+- Parameter params: Dictionary of params
 - Parameter success: Success completion block
 - Parameter failure: Failure  completion block
 ```swift
 var showingMode: TableShowMode = .loading {
-didSet {
-// Update the UI
-}
+    didSet {
+        // Update the UI
+    }
 }
 ```
 Table view showing mode

@@ -20,13 +20,22 @@ All methods, properties, and types available in the Movies Box app are documente
 * [Dependencies](#dependencies)
 
 ## Screen Shots
-
-<p float="center">
+<br/>
+<p align="center">
 <img width="320" height="530" src="/Images/splash.png"/>
 <img width="320" height="530" src="/Images/home.jpg"/>
 </p>
-<br/><br/><br/><br/><br/>
+<br/>
 
+<p >
+
+</p>
+<p align="left"> Launch Screen </p>
+
+<p align="right">
+
+</p>
+<p align="left"> Movie List Result </p>
 
 ## Installation
 

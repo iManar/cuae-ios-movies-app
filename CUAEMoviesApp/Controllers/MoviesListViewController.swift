@@ -50,26 +50,34 @@ class MoviesListViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
-        setupSearchSuggestionController()
     }
 
     
     private func setupViews() {
+        setupSuggestionsList(forBeginSearch: false)
         contentTableView.registerCellNib(MovieCell.self)
         contentTableView.registerCellNib(ErrorCell.self)
         contentTableView.rowHeight = UITableViewAutomaticDimension
         contentTableView.estimatedRowHeight = self.view.bounds.width
     }
     
-    private func setupSearchSuggestionController() {
-        if let suggestionsViewController = self.childViewControllers.first as? SearchSuggestionsViewController {
-            suggestionsViewController.setupSuggestionView()
-        }
+    private func updateResultsLabel() {
+        let totalResults = moviesListPresenter.searchResult?.totalResults
+        resultsLabel.text = "Found \(totalResults ?? 0) results by '\(moviesSearchBar.text ?? "")'"
     }
     
-    private func updateResultsLabel() {
-        if let totalResults = moviesListPresenter.searchResult?.totalResults {
-            resultsLabel.text = "Found \(totalResults) results by '\(moviesSearchBar.text ?? "")'"
+    private func setupSuggestionsList(forBeginSearch: Bool) {
+        if !forBeginSearch { self.view.endEditing(true) }
+        self.containerView.isHidden = false
+
+        if let suggestionsViewController = childViewControllers.first as? SearchSuggestionsViewController, forBeginSearch {
+            suggestionsViewController.suggestionsList = moviesListPresenter.getSuggestionsList()
+        }
+        
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+            self.containerView.alpha = forBeginSearch ? 1 : 0
+        }) { (_) in
+            self.containerView.isHidden = !forBeginSearch
         }
     }
 }
@@ -94,8 +102,15 @@ extension MoviesListViewController: MoviesListViewProtocol {
 // MARK: - UISearchBarDelegate
 extension MoviesListViewController: UISearchBarDelegate {
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        if moviesListPresenter.getSuggestionsList().count > 0 {
+            setupSuggestionsList(forBeginSearch: true)
+        }
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
+        setupSuggestionsList(forBeginSearch: false)
         showingMode = .loading
         moviesListPresenter.getMoviesList(searchBar.text ?? "", pageNum: 1)
     }

@@ -21,8 +21,11 @@ class SearchManager {
             (response) in
             
             if let data = response as? [String: Any] {
-                self.addSearchQueryToCache(query: queryString)
-                completionHandler(Mapper<SearchResult>().map(JSON: data)!, nil)
+                let result = Mapper<SearchResult>().map(JSON: data)!
+                if (result.totalResults ?? 0) > 0 {
+                    self.addSearchQueryToCache(query: queryString)
+                }
+                completionHandler(result, nil)
             } else {
                 completionHandler(nil, genericError)
             }

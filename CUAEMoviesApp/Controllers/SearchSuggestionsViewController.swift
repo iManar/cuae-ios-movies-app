@@ -12,6 +12,12 @@ class SearchSuggestionsViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView!
     
+    var suggestionsList: [String] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -25,23 +31,19 @@ class SearchSuggestionsViewController: UIViewController {
         tableView.accessibilityIdentifier = "SuggestionsTableView"
     }
 
-    func setupSuggestionView() {
-        
-    }
-
 }
 
 extension SearchSuggestionsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return SearchManager().getLastSuccessfulSearchQueries().count
+        return suggestionsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SuggestionCell.self)) as! SuggestionCell
-        cell.setupCellWithSuggestion(name: SearchManager().getLastSuccessfulSearchQueries()[indexPath.row],
+        cell.setupCellWithSuggestion(name: suggestionsList[indexPath.row],
                                      numOfResults: 23)
         return cell
     }

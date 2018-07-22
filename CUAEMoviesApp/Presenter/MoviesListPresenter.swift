@@ -16,6 +16,7 @@ protocol MoviesListProtocol {
     
     func getMoviesList(_ searchKeyword: String, pageNum: Int)
     func getCurrentPageNumber()-> Int
+    func getSuggestionsList()-> [String]
 }
 
 
@@ -72,6 +73,10 @@ class MoviesListPresenter: MoviesListProtocol {
     
     func getCurrentPageNumber() -> Int {
         return searchResult.page ?? 1
+    }
+    
+    func getSuggestionsList() -> [String] {
+        return serviceManager.getLastSuccessfulSearchQueries()
     }
     
 }

@@ -12,11 +12,9 @@ final class SuggestionCell: UITableViewCell {
     
     // MARK: - IBOutlets
     @IBOutlet weak private var suggestionNameLabel: UILabel!
-    @IBOutlet weak private var resultsLabel: UILabel!
 
     func setupCellWithSuggestion(name: String, numOfResults: Int) {
         suggestionNameLabel.text = name
-        resultsLabel.text = "\(numOfResults) result" + (numOfResults > 1 ? "s" : "")
     }
     
 }

@@ -64,9 +64,8 @@
                                     <outlet property="delegate" destination="iJM-Ou-XJj" id="ChN-3H-GXb"/>
                                 </connections>
                             </tableView>
-                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="41P-BQ-HAM">
-                                <rect key="frame" x="0.0" y="69" width="375" height="598"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41P-BQ-HAM">
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                 <connections>
                                     <segue destination="MSm-4R-Bvx" kind="embed" id="c5i-WJ-moW"/>
                                 </connections>
@@ -74,9 +73,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="41P-BQ-HAM" firstAttribute="leading" secondItem="EgW-q0-aiB" secondAttribute="leading" id="F8a-Vz-Ui5"/>
                             <constraint firstItem="VVT-KW-Ur4" firstAttribute="top" secondItem="EgW-q0-aiB" secondAttribute="top" id="Gco-Cq-MSm"/>
+                            <constraint firstItem="41P-BQ-HAM" firstAttribute="trailing" secondItem="EgW-q0-aiB" secondAttribute="trailing" id="Rt3-1U-AvT"/>
+                            <constraint firstItem="41P-BQ-HAM" firstAttribute="top" secondItem="EgW-q0-aiB" secondAttribute="top" constant="50" id="WoS-Sy-Wed"/>
                             <constraint firstItem="EgW-q0-aiB" firstAttribute="trailing" secondItem="VVT-KW-Ur4" secondAttribute="trailing" id="b4v-rR-6wO"/>
                             <constraint firstItem="EgW-q0-aiB" firstAttribute="bottom" secondItem="VVT-KW-Ur4" secondAttribute="bottom" id="g0j-kF-cbf"/>
+                            <constraint firstItem="41P-BQ-HAM" firstAttribute="bottom" secondItem="EgW-q0-aiB" secondAttribute="bottom" id="qaX-rp-mnC"/>
                             <constraint firstItem="VVT-KW-Ur4" firstAttribute="leading" secondItem="EgW-q0-aiB" secondAttribute="leading" id="yNz-XO-OEf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EgW-q0-aiB"/>
@@ -98,11 +101,11 @@
             <objects>
                 <viewController storyboardIdentifier="SearchSuggestionsViewController" id="MSm-4R-Bvx" customClass="SearchSuggestionsViewController" customModule="CUAEMoviesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mbm-u4-g1S">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="dDY-Cp-ZMy">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="FeW-b3-BsQ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

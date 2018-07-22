@@ -27,16 +27,6 @@ All methods, properties, and types available in the Movies Box app are documente
 </p>
 <br/>
 
-<p >
-
-</p>
-<p align="left"> Launch Screen </p>
-
-<p align="right">
-
-</p>
-<p align="left"> Movie List Result </p>
-
 ## Installation
 
 ### CocoaPods
@@ -66,7 +56,7 @@ The most important components are as follow:
 5. `MoviesListConstants` - Class that contains all the magic values in the app
 6. `TableShowMode` – Table view showing mode enum. If you want to customize the table cell appearance based on set of options like **Loading** show the loading cell for example or the default loader, **Error** show error cell as a placeholder or **Normal** show the default cells.
 
-### Code Snippets
+## Code Snippets
 ```swift
 class func doRequest(path: MoviesDBUrls.Path, method: HTTPMethod, params: [String: Any]? = nil, success: @escaping (_ result: Any) -> Void, failure: @escaping (_ err: Error) -> Void)
 ```

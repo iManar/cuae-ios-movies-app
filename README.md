@@ -22,8 +22,13 @@ All methods, properties, and types available in the Movies Box app are documente
 ## Screen Shots
 <br/>
 <p align="center">
-<img width="320" height="530" src="/Images/splash.png"/>
+<img width="320" height="530" src="/Images/splash.jpg"/>
 <img width="320" height="530" src="/Images/home.jpg"/>
+</p>
+<br/><br/>
+<p align="center">
+<img width="320" height="530" src="/Images/suggestions.jpg"/>
+<img width="320" height="530" src="/Images/error.jpg"/>
 </p>
 <br/>
 
@@ -43,7 +48,7 @@ You just need to run the following command:
 ```
 $ pod install
 ```
-
+> **P.S.** There's no need to do it, they are already uploaded 💥 
 ## Architecture
 The current architecture of the app is MVP (Model View Presenter).
 

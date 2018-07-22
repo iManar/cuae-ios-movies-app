@@ -28,7 +28,6 @@ class SearchSuggestionsViewController: UIViewController {
         tableView.registerCellNib(SuggestionCell.self)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = self.view.bounds.width
-        tableView.accessibilityIdentifier = "SuggestionsTableView"
     }
 
 }
@@ -36,7 +35,6 @@ class SearchSuggestionsViewController: UIViewController {
 extension SearchSuggestionsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return suggestionsList.count
     }
     
@@ -46,5 +44,12 @@ extension SearchSuggestionsViewController: UITableViewDataSource, UITableViewDel
         cell.setupCellWithSuggestion(name: suggestionsList[indexPath.row],
                                      numOfResults: 23)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let moviesListViewController = parent as? MoviesListViewController {
+            moviesListViewController.selectedSuggestion = suggestionsList[indexPath.row]
+        }
+
     }
 }

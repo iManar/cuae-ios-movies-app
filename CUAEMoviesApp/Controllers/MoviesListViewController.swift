@@ -38,12 +38,20 @@ class MoviesListViewController: UIViewController {
             updateResultsLabel()
         }
     }
-   
+    var selectedSuggestion: String! {
+        didSet {
+            moviesSearchBar.text = selectedSuggestion
+            searchBarSearchButtonClicked(moviesSearchBar)
+        }
+    }
+    
+    
     @IBOutlet private weak var contentTableView: UITableView!
     @IBOutlet private weak var moviesSearchBar: UISearchBar! 
     @IBOutlet private weak var tableHeaderView: UIView!
     @IBOutlet private weak var resultsLabel: UILabel!
     @IBOutlet private weak var containerView: UIView!
+    
     
     
     override func viewDidLoad() {

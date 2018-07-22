@@ -35,7 +35,7 @@ class MoviesListPresenter: MoviesListProtocol {
     
     
     lazy var moviesList: [Movie] = []
-    var searchResult: SearchResult!
+    var searchResult: SearchResult?
     
     
     // MARK: - Methods
@@ -72,7 +72,7 @@ class MoviesListPresenter: MoviesListProtocol {
     }
     
     func getCurrentPageNumber() -> Int {
-        return searchResult.page ?? 1
+        return searchResult?.page ?? 1
     }
     
     func getSuggestionsList() -> [String] {

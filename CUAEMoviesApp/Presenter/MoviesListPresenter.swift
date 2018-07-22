@@ -16,13 +16,6 @@ protocol MoviesListProtocol {
     
     func getMoviesList(_ searchKeyword: String, pageNum: Int)
     func getCurrentPageNumber()-> Int
-//
-//    func getNumberOfRows(_ withAlarms: Bool) -> Int
-//    func toggleCategoryAtIndex(_ index: Int)
-//
-//    func getCellAtIndex(_ index: Int, tableView: UITableView, withAlarms: Bool) -> UITableViewCell?
-//
-//    func showConsumpationDetailForBill(model: VFBillIntegrationModel)
 }
 
 
@@ -40,7 +33,6 @@ class MoviesListPresenter: MoviesListProtocol {
     private let serviceManager = SearchManager()
     
     
-    // MARK: - Private Lazy Variables
     lazy var moviesList: [Movie] = []
     var searchResult: SearchResult!
     
@@ -50,8 +42,8 @@ class MoviesListPresenter: MoviesListProtocol {
     // MARK: - Init
     
     /**
-     Initialize an instance of Bill Details Presenter with View Controller delegate
-     - returns: VFGBillDetailsPresenter Object
+     Initialize an instance of Movies List Presenter with View Controller delegate
+     - returns: MoviesListPresenter Object
      */
     init(_ delegate: MoviesListViewProtocol) {
         self.delegate = delegate

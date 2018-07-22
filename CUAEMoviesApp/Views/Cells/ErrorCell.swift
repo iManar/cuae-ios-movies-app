@@ -2,8 +2,8 @@
 //  VFTopUpRecordErrorCell.swift
 //  MyVodafone
 //
-//  Created by Ahmed Askar on 12/17/17.
-//  Copyright © 2017 TSSE. All rights reserved.
+//  Created by Manar Magdy on 12/17/17.
+//  Copyright © 2017 Manar Magdy. All rights reserved.
 //
 
 import UIKit

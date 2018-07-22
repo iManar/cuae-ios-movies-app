@@ -2,7 +2,7 @@
 //	SearchResult.swift
 //
 //	Create by Manar Magdy on 15/7/2018
-//	Copyright © 2018 Vodafone. All rights reserved.
+//	Copyright © 2018 Manar Magdy. All rights reserved.
 //	Model file generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
 import Foundation 

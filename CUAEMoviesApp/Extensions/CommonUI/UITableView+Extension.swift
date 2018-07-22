@@ -12,15 +12,11 @@ import UIKit
 public extension UITableView {
     
     func registerCellClass(_ cellClass: AnyClass) {
-        
-        let identifier = String(describing: cellClass)
-        register(cellClass, forCellReuseIdentifier: identifier)
+        register(cellClass, forCellReuseIdentifier: String(describing: cellClass))
     }
     
     func registerCellNib(_ cellClass: AnyClass) {
-        
-        let identifier = String(describing: cellClass)
-        let nib = UINib(nibName: identifier, bundle: nil)
+        let nib = UINib(nibName: String(describing: cellClass), bundle: nil)
         register(nib, forCellReuseIdentifier: identifier)
     }
 }

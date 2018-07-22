@@ -25,12 +25,13 @@ All methods, properties, and types available in the Movies Box app are documente
 <img width="320" height="530" src="/Images/splash.jpg"/>
 <img width="320" height="530" src="/Images/home.jpg"/>
 </p>
-<br/>
+<br/><br/>
 <p align="center">
 <img width="320" height="530" src="/Images/suggestions.jpg"/>
 <img width="320" height="530" src="/Images/error.jpg"/>
 </p>
 <br/>
+
 ## Installation
 
 ### CocoaPods

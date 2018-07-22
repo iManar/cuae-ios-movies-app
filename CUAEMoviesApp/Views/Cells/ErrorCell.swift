@@ -2,7 +2,7 @@
 //  VFTopUpRecordErrorCell.swift
 //  MyVodafone
 //
-//  Created by Manar Magdy on 12/17/17.
+//  Created by Manar Magdy on 7/15/18.
 //  Copyright © 2017 Manar Magdy. All rights reserved.
 //
 

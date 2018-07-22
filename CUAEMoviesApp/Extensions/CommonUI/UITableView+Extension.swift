@@ -2,7 +2,7 @@
 //  UITableView+Extension.swift
 //  CUAEMoviesApp
 //
-//  Created by Manar Magdy on 7/21/18.
+//  Created by Manar Magdy on 7/15/18.
 //  Copyright © 2018 Manar Magdy. All rights reserved.
 //
 
@@ -17,7 +17,7 @@ public extension UITableView {
     
     func registerCellNib(_ cellClass: AnyClass) {
         let nib = UINib(nibName: String(describing: cellClass), bundle: nil)
-        register(nib, forCellReuseIdentifier: identifier)
+        register(nib, forCellReuseIdentifier: String(describing: cellClass))
     }
 }
 

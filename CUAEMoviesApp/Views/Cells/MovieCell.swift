@@ -2,7 +2,7 @@
 //  MovieCell.swift
 //  CareemMovie
 //
-//  Created by Manar Magdy on 7/3/18.
+//  Created by Manar Magdy on 7/15/18.
 //  Copyright © 2018 Manar Magdy. All rights reserved.
 //
 

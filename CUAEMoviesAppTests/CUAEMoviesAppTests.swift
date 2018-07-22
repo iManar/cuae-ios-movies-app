@@ -6,17 +6,22 @@
 //  Copyright © 2018 Manar Magdy. All rights reserved.
 //
 
+import Foundation
 import XCTest
+
+
 @testable import CUAEMoviesApp
 
 class CUAEMoviesAppTests: XCTestCase {
     
     var searchManager: SearchManager!
+    var easyCashing: EasyCashing!
     
     override func setUp() {
         super.setUp()
 
         searchManager = SearchManager()
+        easyCashing = EasyCashingImplementation()
     }
     
     // MARK: Base functions
@@ -30,7 +35,7 @@ class CUAEMoviesAppTests: XCTestCase {
             guard let responseModel = response else { return }
             searchResult = responseModel
             expectation.fulfill()
-            debugPrint("\n**Found results: \(responseModel.totalResults ?? 0) for keyword: \(query) 💥\n")
+            debugPrint("\n*Found results: \(responseModel.totalResults ?? 0) for keyword: \(query) 💥\n")
             XCTAssertTrue(responseModel.totalResults ?? 0 > 0)
         }
         
@@ -52,6 +57,20 @@ class CUAEMoviesAppTests: XCTestCase {
     func testGetResultsSuccessWithNextPageIronMan() {
         let movieResults = getResultSuccessWithQuery(query: "Rock", page: 2)
         XCTAssertTrue(movieResults?.totalResults ?? 0 > 0)
+    }
+    
+    func testCaching() {
+        let key = "anyKey"
+        let value = ["1", "2", "3", "4"]
+        easyCashing.cache(object: value, forKey: key)
+        let loadedValue = easyCashing.load(objectForKey: key) as! [String]
+        XCTAssert(loadedValue == value, "EXPECTED: LoadedValue to be \(String(describing: value))")
+    }
+    
+    func testLoadInvalidKeys() {
+        let key = "invalidKey"
+        let loadedValue = easyCashing.load(objectForKey: key)
+        XCTAssertNil(loadedValue)
     }
     
 }

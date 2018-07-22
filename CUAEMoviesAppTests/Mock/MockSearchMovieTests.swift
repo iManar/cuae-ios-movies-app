@@ -6,16 +6,11 @@
 //  Copyright © 2018 Manar Magdy. All rights reserved.
 //
 
-import Foundation
-import XCTest
-
-@testable import CUAEMoviesApp
 
 /* TEST CASES:
  1. Mock test search success
  2. Mock test search with error
  */
-
 extension CUAEMoviesAppTests {
     
     // Mock serviece    

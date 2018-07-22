@@ -19,7 +19,6 @@ protocol MoviesListViewProtocol: class {
 }
 
 
-
 class MoviesListViewController: UIViewController {
 
     // MARK: - Private Varaibles
@@ -51,15 +50,21 @@ class MoviesListViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+        setupSearchSuggestionController()
     }
 
     
     private func setupViews() {
-        
         contentTableView.registerCellNib(MovieCell.self)
         contentTableView.registerCellNib(ErrorCell.self)
         contentTableView.rowHeight = UITableViewAutomaticDimension
         contentTableView.estimatedRowHeight = self.view.bounds.width
+    }
+    
+    private func setupSearchSuggestionController() {
+        if let suggestionsViewController = self.childViewControllers.first as? SearchSuggestionsViewController {
+            suggestionsViewController.setupSuggestionView()
+        }
     }
     
     private func updateResultsLabel() {
@@ -80,7 +85,6 @@ extension MoviesListViewController: MoviesListViewProtocol {
         showingMode = .error(msg: errorMsg)
         debugPrint("🤷‍♀️🤷‍♀️🤷‍♀️")
     }
-    
     
 }
 

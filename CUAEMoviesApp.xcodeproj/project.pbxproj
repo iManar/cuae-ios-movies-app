@@ -16,6 +16,10 @@
 		310ED6372103EF9D00BEB0F3 /* ErrorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 310ED6352103EF9B00BEB0F3 /* ErrorCell.xib */; };
 		310ED6382103EF9D00BEB0F3 /* ErrorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310ED6362103EF9B00BEB0F3 /* ErrorCell.swift */; };
 		310ED6412104A5D500BEB0F3 /* MockSearchMovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310ED63F2104A5D500BEB0F3 /* MockSearchMovieTests.swift */; };
+		313D85AF2104CCAC00BE6B1B /* EasyCashing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313D85AE2104CCAC00BE6B1B /* EasyCashing.swift */; };
+		313D85B12104D23800BE6B1B /* SearchSuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313D85B02104D23800BE6B1B /* SearchSuggestionsViewController.swift */; };
+		313D85B42104D2DC00BE6B1B /* SuggestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 313D85B22104D2DC00BE6B1B /* SuggestionCell.xib */; };
+		313D85B52104D2DC00BE6B1B /* SuggestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313D85B32104D2DC00BE6B1B /* SuggestionCell.swift */; };
 		31A2348020F75A6600E4320F /* splash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 31A2347F20F75A6600E4320F /* splash.jpg */; };
 		31A2348720F75BA600E4320F /* CenturyGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31A2348520F75B6200E4320F /* CenturyGothicBold.ttf */; };
 		31A2348820F75BA600E4320F /* CenturyGothicRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31A2348620F75B6200E4320F /* CenturyGothicRegular.ttf */; };
@@ -68,6 +72,10 @@
 		310ED6352103EF9B00BEB0F3 /* ErrorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorCell.xib; sourceTree = "<group>"; };
 		310ED6362103EF9B00BEB0F3 /* ErrorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorCell.swift; sourceTree = "<group>"; };
 		310ED63F2104A5D500BEB0F3 /* MockSearchMovieTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSearchMovieTests.swift; sourceTree = "<group>"; };
+		313D85AE2104CCAC00BE6B1B /* EasyCashing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyCashing.swift; sourceTree = "<group>"; };
+		313D85B02104D23800BE6B1B /* SearchSuggestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestionsViewController.swift; sourceTree = "<group>"; };
+		313D85B22104D2DC00BE6B1B /* SuggestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuggestionCell.xib; sourceTree = "<group>"; };
+		313D85B32104D2DC00BE6B1B /* SuggestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionCell.swift; sourceTree = "<group>"; };
 		31A2347F20F75A6600E4320F /* splash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash.jpg; sourceTree = "<group>"; };
 		31A2348520F75B6200E4320F /* CenturyGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CenturyGothicBold.ttf; sourceTree = "<group>"; };
 		31A2348620F75B6200E4320F /* CenturyGothicRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CenturyGothicRegular.ttf; sourceTree = "<group>"; };
@@ -153,6 +161,8 @@
 				310ED62F2103D5FD00BEB0F3 /* MovieCell.xib */,
 				310ED6362103EF9B00BEB0F3 /* ErrorCell.swift */,
 				310ED6352103EF9B00BEB0F3 /* ErrorCell.xib */,
+				313D85B32104D2DC00BE6B1B /* SuggestionCell.swift */,
+				313D85B22104D2DC00BE6B1B /* SuggestionCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -173,6 +183,14 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		313D85AD2104CC8100BE6B1B /* Cashing */ = {
+			isa = PBXGroup;
+			children = (
+				313D85AE2104CCAC00BE6B1B /* EasyCashing.swift */,
+			);
+			path = Cashing;
+			sourceTree = "<group>";
+		};
 		31A2348120F75ADF00E4320F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				31C13D8420FA990900433D7A /* MoviesListViewController.swift */,
+				313D85B02104D23800BE6B1B /* SearchSuggestionsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -269,6 +288,7 @@
 				31C13D8320FA98E900433D7A /* Controllers */,
 				310ED6242103643B00BEB0F3 /* Presenter */,
 				31C13D8620FA9C9600433D7A /* Extensions */,
+				313D85AD2104CC8100BE6B1B /* Cashing */,
 				31D5B2D020F6353B00D54FA5 /* Supporting Files */,
 			);
 			path = CUAEMoviesApp;
@@ -444,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				310ED6372103EF9D00BEB0F3 /* ErrorCell.xib in Resources */,
+				313D85B42104D2DC00BE6B1B /* SuggestionCell.xib in Resources */,
 				31A2348720F75BA600E4320F /* CenturyGothicBold.ttf in Resources */,
 				310ED6312103D5FD00BEB0F3 /* MovieCell.xib in Resources */,
 				31A2348820F75BA600E4320F /* CenturyGothicRegular.ttf in Resources */,
@@ -561,6 +582,8 @@
 				310ED6322103D5FD00BEB0F3 /* MovieCell.swift in Sources */,
 				310ED62A2103D44300BEB0F3 /* UITableView+Extension.swift in Sources */,
 				31C13D8D20FA9FE300433D7A /* MoviesDBUrls.swift in Sources */,
+				313D85B52104D2DC00BE6B1B /* SuggestionCell.swift in Sources */,
+				313D85B12104D23800BE6B1B /* SearchSuggestionsViewController.swift in Sources */,
 				31C13D9520FAB12700433D7A /* SearchResult.swift in Sources */,
 				31C13D9820FAB5DA00433D7A /* Utils.swift in Sources */,
 				310ED62C2103D48300BEB0F3 /* String+Extension.swift in Sources */,
@@ -569,6 +592,7 @@
 				31C13D8F20FAA6E600433D7A /* AppServiceManager.swift in Sources */,
 				31C13D9120FAA82700433D7A /* SearchManager.swift in Sources */,
 				31D5B2A320F62B1100D54FA5 /* AppDelegate.swift in Sources */,
+				313D85AF2104CCAC00BE6B1B /* EasyCashing.swift in Sources */,
 				310ED6262103646300BEB0F3 /* MoviesListPresenter.swift in Sources */,
 				310ED6342103E06800BEB0F3 /* Constants.swift in Sources */,
 				31C13D9620FAB12700433D7A /* Movie.swift in Sources */,

@@ -3,7 +3,7 @@
 //  CUAEMoviesApp
 //
 //  Created by Manar Magdy on 7/14/18.
-//  Copyright © 2018 tr. All rights reserved.
+//  Copyright © 2018 Manar Magdy. All rights reserved.
 //
 
 import UIKit

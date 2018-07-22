@@ -3,7 +3,7 @@
 //  CUAEMoviesApp
 //
 //  Created by Manar Magdy on 7/14/18.
-//  Copyright © 2018 tr. All rights reserved.
+//  Copyright © 2018 Manar Magdy. All rights reserved.
 //
 
 import UIKit
@@ -29,13 +29,6 @@ class MoviesListViewController: UIViewController {
      */
     private lazy var moviesListPresenter: MoviesListPresenter = MoviesListPresenter(self)
     
-//        {
-//        didSet {
-//            graphPresenter.updateAlias = { [weak self] alias in
-//                self?.accountAliasLabel.text = alias
-//            }
-//        }
-//    }
     
     /**
      *  The details table, showing mode
@@ -48,7 +41,7 @@ class MoviesListViewController: UIViewController {
     }
    
     @IBOutlet private weak var contentTableView: UITableView!
-    @IBOutlet private weak var moviesSearchBar: UISearchBar!
+    @IBOutlet private weak var moviesSearchBar: UISearchBar! 
     @IBOutlet private weak var tableHeaderView: UIView!
     @IBOutlet private weak var resultsLabel: UILabel!
     @IBOutlet private weak var containerView: UIView!
@@ -64,24 +57,27 @@ class MoviesListViewController: UIViewController {
     private func setupViews() {
         
         contentTableView.registerCellNib(MovieCell.self)
+        contentTableView.registerCellNib(ErrorCell.self)
         contentTableView.rowHeight = UITableViewAutomaticDimension
         contentTableView.estimatedRowHeight = self.view.bounds.width
     }
     
     private func updateResultsLabel() {
-        resultsLabel.text = "Found \(moviesListPresenter.searchResult.totalResults ?? 0) results by '\(moviesSearchBar.text ?? "")'"
+        if let totalResults = moviesListPresenter.searchResult?.totalResults {
+            resultsLabel.text = "Found \(totalResults) results by '\(moviesSearchBar.text ?? "")'"
+        }
     }
 }
 
 extension MoviesListViewController: MoviesListViewProtocol {
     
     func refreshView() {
-        showingMode = .normal
+        showingMode = moviesListPresenter.moviesList.count > 0 ? .normal : .error(msg: MoviesListConstants.noDataPlaceholder)
         debugPrint("💃💃💃")
     }
     
     func showErrorWithMessage(_ errorMsg: String) {
-        showingMode = .error
+        showingMode = .error(msg: errorMsg)
         debugPrint("🤷‍♀️🤷‍♀️🤷‍♀️")
     }
     
@@ -96,12 +92,13 @@ extension MoviesListViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
+        showingMode = .loading
         moviesListPresenter.getMoviesList(searchBar.text ?? "", pageNum: 1)
     }
 }
 
 
-extension MoviesListViewController: UITableViewDataSource {
+extension MoviesListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch showingMode {
@@ -116,16 +113,20 @@ extension MoviesListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch showingMode {
-        case .error:
-            return UITableViewCell()
+        case .error(let msg):
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ErrorCell.self)) as! ErrorCell
+            cell.setupWithMsg(msg)
+            return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell") as! MovieCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MovieCell.self)) as! MovieCell
             cell.setupWithModel(moviesListPresenter.moviesList[indexPath.row])
             return cell
         }
     }
     
-    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        moviesListPresenter.getMoviesList(moviesSearchBar.text ?? "", pageNum: moviesListPresenter.getCurrentPageNumber()+1)
+    }
 }
 
 

@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="CenturyGothicRegular.ttf">
+            <string>CenturyGothic</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Movies List View Controller-->
         <scene sceneID="wsU-8o-O3l">
@@ -38,7 +43,7 @@
                                         </searchBar>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLs-JR-KgZ">
                                             <rect key="frame" x="16" y="56" width="343" height="18"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="13"/>
+                                            <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="12"/>
                                             <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="0.89714790239999997" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -56,6 +61,7 @@
                                 </view>
                                 <connections>
                                     <outlet property="dataSource" destination="iJM-Ou-XJj" id="7uz-I8-9sD"/>
+                                    <outlet property="delegate" destination="iJM-Ou-XJj" id="ChN-3H-GXb"/>
                                 </connections>
                             </tableView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="41P-BQ-HAM">

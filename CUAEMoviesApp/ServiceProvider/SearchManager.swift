@@ -2,8 +2,8 @@
 //  SearchManager.swift
 //  CUAEMoviesApp
 //
-//  Created by tr on 7/14/18.
-//  Copyright © 2018 tr. All rights reserved.
+//  Created by Manar Magdy on 7/14/18.
+//  Copyright © 2018 Manar Magdy. All rights reserved.
 //
 
 import Foundation
@@ -21,11 +21,11 @@ class SearchManager {
             if let data = response as? [String: Any] {
                 completionHandler(Mapper<SearchResult>().map(JSON: data)!, nil)
             } else {
-                completionHandler(nil, genericError())
+                completionHandler(nil, genericError)
             }
         }, failure: { (error) in
             debugPrint(error.localizedDescription)
-            completionHandler(nil, genericError())
+            completionHandler(nil, error)
         })
     }
 }

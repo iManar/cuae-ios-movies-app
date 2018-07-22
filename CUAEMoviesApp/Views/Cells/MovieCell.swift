@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class MovieCell: UITableViewCell {
 
     //MARK: - IBOutlets
     @IBOutlet private weak var posterImageView: UIImageView!
-    @IBOutlet private weak var movieNameLabel: UILabel!
-    @IBOutlet private weak var releaseDateLabel: UILabel!
     @IBOutlet private weak var overViewTextView: UITextView!
     @IBOutlet private weak var containMovieView: UIView!
+    @IBOutlet private weak var releaseDateLabel: UILabel!
+    @IBOutlet private weak var movieNameLabel: UILabel!
     
     
     func setupWithModel(_ model: Movie) {
@@ -24,16 +25,14 @@ final class MovieCell: UITableViewCell {
         releaseDateLabel.text = model.releaseDate?.formate()
         overViewTextView.text = (model.overview?.count ?? 0) > 0 ? model.overview : "No description available"
         
-        // Incase all image of movie is null
-        let imagePath = model.posterPath ?? model.backdropPath
-//        if let imagePath = imagePath {
-//            let imageFullURL = Helper.getFullImageURL(imagePath: imagePath, type: .w185)
-//            if let url = URL(string: imageFullURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) {
-//                posterImageView.kf.setImage(with: url,
-//                                            placeholder: UIImage(named: "movie_placeholder"),
-//                                            options: [.transition(ImageTransition.fade(0.2))])
-//            }
-//        }
+        if let imagePath = model.posterPath ?? model.backdropPath {
+            
+            let path: MoviesDBUrls.Path = .image(size: .w185, imagePath: imagePath)
+            let imageFullURL = path.absolutePath
+            if URL(string: imageFullURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) != nil {
+                posterImageView.sd_setImage(with: URL(string: imageFullURL), placeholderImage: #imageLiteral(resourceName: "defaultImage"))
+            }
+        }
     }
     
 }

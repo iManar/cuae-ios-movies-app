@@ -2,8 +2,8 @@
 //  MoviesListPresenter.swift
 //  CUAEMoviesApp
 //
-//  Created by tr on 7/21/18.
-//  Copyright © 2018 tr. All rights reserved.
+//  Created by Manar Magdy on 7/21/18.
+//  Copyright © 2018 Manar Magdy. All rights reserved.
 //
 
 import Foundation
@@ -15,7 +15,7 @@ import Foundation
 protocol MoviesListProtocol {
     
     func getMoviesList(_ searchKeyword: String, pageNum: Int)
-//    func completeBillDetailsModel(_ selectedBill: VFBill)
+    func getCurrentPageNumber()-> Int
 //
 //    func getNumberOfRows(_ withAlarms: Bool) -> Int
 //    func toggleCategoryAtIndex(_ index: Int)
@@ -32,6 +32,7 @@ protocol MoviesListProtocol {
 class MoviesListPresenter: MoviesListProtocol {
     
     
+    
     // MARK: - Properties
     
     // MARK: - Private Properties
@@ -44,7 +45,6 @@ class MoviesListPresenter: MoviesListProtocol {
     var searchResult: SearchResult!
     
     
-    
     // MARK: - Methods
     
     // MARK: - Init
@@ -54,7 +54,6 @@ class MoviesListPresenter: MoviesListProtocol {
      - returns: VFGBillDetailsPresenter Object
      */
     init(_ delegate: MoviesListViewProtocol) {
-        
         self.delegate = delegate
     }
     
@@ -68,11 +67,19 @@ class MoviesListPresenter: MoviesListProtocol {
            
             if let responseModel = response {
                 strongSelf.searchResult = responseModel
+                if pageNum == 1 {
+                    strongSelf.moviesList = []
+                }
                 strongSelf.moviesList.append(contentsOf: responseModel.movies ?? [])
                 strongSelf.delegate.refreshView()
             } else {
-//                showAlertView(error!.localizedDescription, title: General.errorViewTitle)
+                strongSelf.delegate.showErrorWithMessage(error!.localizedDescription)
             }
         }
     }
+    
+    func getCurrentPageNumber() -> Int {
+        return searchResult.page ?? 1
+    }
+    
 }

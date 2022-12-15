@@ -1,5 +1,5 @@
-# Careem Movies Box
-Careem​ ​UAE Assignment - Movies Application "Display and Search"
+# Movies Box
+Movies Application "Display and Search"
 
 ## Introduction
 This app is a simple movies database application. 
